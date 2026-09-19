@@ -53,4 +53,4 @@ Python, pandas, NumPy, scikit-learn, matplotlib, Jupyter, Git/GitHub
 
 ## Author
 
-John, first-year Mathematics student.
+buildbyjohn, claude
