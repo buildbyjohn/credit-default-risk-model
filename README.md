@@ -54,3 +54,27 @@ Python, pandas, NumPy, scikit-learn, matplotlib, Jupyter, Git/GitHub
 ## Author
 
 buildbyjohn, claude
+
+## Results
+
+| Model | CV ROC-AUC | Test ROC-AUC |
+|---|---|---|
+| Logistic regression | 0.855 | ... |
+| Gradient boosting | 0.864 | ... (95% CI ... to ...) |
+
+**Lending policy (illustrative assumptions: $10,000 loan, 60% LGD, 8% margin):**
+approve borrowers with PD < 0.118. On the test set this approves X% of
+applicants and yields $... profit vs $... for approving everyone.
+
+## Key findings
+- Credit utilisation and past delinquencies drive risk
+- Missing income and the 96/98 late-payment codes carry information
+- Boosting beats logistic regression by about 0.009 AUC (consistent across folds)
+
+## Limitations
+- LGD and margin are assumptions, since the dataset has no loan amounts or recoveries
+- One dataset with no time dimension, so there's no out-of-time validation
+- Age is used as a feature. Real lending may restrict this, so a production model would need a fairness and compliance review
+
+## Data
+Download `cs-training.csv` from Kaggle (Give Me Some Credit) into `data/raw/`.
